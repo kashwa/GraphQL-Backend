@@ -18,19 +18,6 @@ type Query {
 }
 
 type Mutation {
-    # createUser(
-    #     name: String @rules(apply: ["required"])
-    #     email: String @rules(apply: ["required", "email", "unique:users,email"])
-    # ): User @create(model: "App\\User")
-    # updateUser(
-    #     id: ID @rules(apply: ["required"])
-    #     name: String
-    #     email: String @rules(apply: ["email"])
-    # ): User @update(model: "App\\User")
-    # deleteUser(
-    #     id: ID @rules(apply: ["required"])
-    # ): User @delete(model: "App\\User")
-
     createCategory(
         name: String @rules(apply: ["required", "unique:categories,name"])
     ): Category @create
@@ -69,14 +56,6 @@ type Mutation {
         id: ID! @rules(apply: ["required"])
     ): Book @delete
 }
-
-# type User {
-#     id: ID!
-#     name: String!
-#     email: String!
-#     created_at: DateTime!
-#     updated_at: DateTime!
-# }
 
 type Book {
     id: ID!
